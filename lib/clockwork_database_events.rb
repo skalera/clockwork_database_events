@@ -1,3 +1,4 @@
+require 'sequel'
 require 'active_support/time'
 
 Sequel::Model.plugin :timestamps, update_on_create: true

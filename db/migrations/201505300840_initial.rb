@@ -10,6 +10,7 @@ Sequel.migration do
     create_table(:clockwork_database_events) do
       primary_key :id
       Integer :frequency_quantity
+      String :name, null: true
       String :at, null: false, default: ''
       Integer :frequency_period_id, null: false
       foreign_key [:frequency_period_id], :frequency_periods,

@@ -21,10 +21,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'sequel', '~> 4'
-  spec.add_runtime_dependency 'activesupport'
+  spec.add_runtime_dependency 'activesupport', '~> 4'
 
   spec.add_development_dependency 'bundler', '~> 1'
   spec.add_development_dependency 'rake', '~> 10'
-  spec.add_development_dependency 'rubocop'
-  spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'rubocop', '~> 0'
+  spec.add_development_dependency 'pry', '~> 0'
 end
