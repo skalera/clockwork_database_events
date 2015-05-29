@@ -6,6 +6,6 @@ require 'clockwork_database_events/version'
 require 'clockwork_database_events/models/clockwork_database_event'
 require 'clockwork_database_events/models/frequency_period'
 
+# clockwork database events
 module ClockworkDatabaseEvents
-  # Your code goes here...
 end

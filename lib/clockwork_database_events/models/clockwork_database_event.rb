@@ -1,3 +1,4 @@
+# Database event model
 class ClockworkDatabaseEvent < Sequel::Model
   many_to_one :frequency_period
 

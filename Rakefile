@@ -1,4 +1,7 @@
 require 'bundler/gem_tasks'
+require 'rubocop/rake_task'
+
+RuboCop::RakeTask.new
 
 namespace :db do
   desc 'migrate the database to the latest version'

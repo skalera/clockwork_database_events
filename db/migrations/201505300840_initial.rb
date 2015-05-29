@@ -12,7 +12,8 @@ Sequel.migration do
       Integer :frequency_quantity
       String :at, null: false, default: ''
       Integer :frequency_period_id, null: false
-      foreign_key [:frequency_period_id], :frequency_periods, name: 'clockwork_database_events_frequency_period_id_fkey'
+      foreign_key [:frequency_period_id], :frequency_periods,
+                  name: 'clockwork_database_events_frequency_period_id_fkey'
 
       DateTime :created_at, null: false
       DateTime :updated_at, null: false
