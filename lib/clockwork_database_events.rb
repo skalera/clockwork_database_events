@@ -1,12 +1,14 @@
-require 'sequel'
-require 'active_support/time'
-
-Sequel::Model.plugin :timestamps, update_on_create: true
-
 require 'clockwork_database_events/version'
-require 'clockwork_database_events/models/clockwork_database_event'
-require 'clockwork_database_events/models/frequency_period'
 
 # clockwork database events
 module ClockworkDatabaseEvents
+  def migrate(db)
+    require 'sequel'
+    Sequel.extension :migration
+    migrations = File.expand_path('../../db/migrations', __FILE__)
+    return if Sequel::Migrator.is_current?(db, migrations)
+    Sequel::Migrator.run(db, migrations)
+  end
+
+  module_function :migrate
 end
