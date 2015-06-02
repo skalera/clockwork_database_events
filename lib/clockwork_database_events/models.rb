@@ -14,4 +14,11 @@ module ClockworkDatabaseEvents
   end
 
   module_function :seed
+
+  def db=(database)
+    FrequencyPeriod.db = database
+    ClockworkDatabaseEvent.db = database
+  end
+
+  module_function :db=
 end
