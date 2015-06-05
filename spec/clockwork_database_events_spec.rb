@@ -5,7 +5,10 @@ describe ClockworkDatabaseEvents do
     expect(ClockworkDatabaseEvents::VERSION).not_to be nil
   end
 
-  it 'should connect to the database' do
-    expect(ClockworkDatabaseEvents.connect('sqlite:/')).to be_an_instance_of(Sequel::SQLite::Database)
+  it 'should seed the database' do
+    expect {
+      ClockworkDatabaseEvents.migrate(DB)
+      ClockworkDatabaseEvents.seed
+    }.to change { FrequencyPeriod.all.size }.by(6)
   end
 end
