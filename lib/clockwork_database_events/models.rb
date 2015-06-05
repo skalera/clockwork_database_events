@@ -11,7 +11,7 @@ module ClockworkDatabaseEvents
     puts 'seeding frequecy table...'
     %w(second minute hour day week month).each do |period|
       FrequencyPeriod.find_or_create(name: period) do
-        puts "created #{persiod}"
+        puts "created #{period}"
       end
     end
   end
